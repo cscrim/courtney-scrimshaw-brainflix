@@ -1,5 +1,7 @@
 import BrainFlixLogo from '../../assets/images/BrainFlix-logo.svg';
 import userAvatar from '../../assets/images/Mohan-muruge.jpg';
+import searchIcon from '../../assets/images/search.svg';
+import uploadIcon from '../../assets/images/upload.svg';
 import './Header.scss';
 
 function Header({ myHandlerFunction }) {
@@ -15,6 +17,9 @@ function Header({ myHandlerFunction }) {
         <div className="header__search-container">
         <div className="header__search-bar">
             <form>
+                <div className="header__search-icon">
+                    <img src={searchIcon} alt="search icon" />
+                </div>
                 <input type="text" placeholder="Search" />
             </form>
         </div>
@@ -23,7 +28,9 @@ function Header({ myHandlerFunction }) {
         </div>
         </div>
         <div className="header__button">
-      <button onClick={myHandlerFunction}>UPLOAD</button>
+      <button onClick={myHandlerFunction}>
+        <img src={uploadIcon} alt="upload icon" className="upload-icon" />
+        UPLOAD</button>
       </div>
     </header>
   )
