@@ -1,10 +1,9 @@
 import "./Comments.scss";
 
 
-
-function Comments() {
+function Comments({ selected }) {
   return (
-    <div>
+    <div className="comments">
       
     </div>
   )

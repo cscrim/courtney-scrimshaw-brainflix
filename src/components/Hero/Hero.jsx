@@ -16,7 +16,26 @@ function Hero({ selected }) {
       </div>
       <div className="hero__title-container">
         <h1>{selected.title}</h1>
-      </div>
+        </div>
+        <div className="hero__details-container">
+            <div className="hero__details-channel">
+                <p>
+                    {selected.channel}
+                </p>
+                <p>
+                    {selected.timestamp}
+                </p>
+            </div>
+            <div className="hero__details-views">
+                <p>
+                    {selected.views}
+                </p>
+                <p>
+                    {selected.likes}
+                </p>
+            </div>
+        </div>
+      
     </div>
   );
 }
