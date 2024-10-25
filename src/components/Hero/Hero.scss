@@ -18,7 +18,7 @@
     &__title-container {
         display: flex;
         justify-content: center;
-        width: 80%;
+        width: 90%;
         padding-top: 2rem;
         padding-bottom: 1rem;
         border-bottom: 1px solid grey;
@@ -26,8 +26,16 @@
 
     &__details-container {
         display: flex;
+
         width: 100%;
         justify-content: space-around;
         padding: 1rem 0;
+        width: 90%;
+        border-bottom: 1px solid grey;
+    }
+
+    &__description-container {
+        margin: 1rem 0;
+        width: 90%;
     }
 }

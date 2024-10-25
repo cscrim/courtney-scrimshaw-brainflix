@@ -35,6 +35,11 @@ function Hero({ selected }) {
                 </p>
             </div>
         </div>
+        <div className="hero__description-container">
+            <p>
+                {selected.description}
+            </p>
+        </div>
       
     </div>
   );
