@@ -4,16 +4,30 @@ import "./Thumbnails.scss";
 function Thumbnails({ videos, setSelected }) {
   return (
     <div className="thumbnails">
+      <div className="thumbnails__heading">
+      <h2>
+        Next Videos
+      </h2>
+      </div>
         <ul className="thumbnails__list">
             {  videos.map((video) =>  (
                 <li 
-                className="thumbnail__item"
+                className="thumbnails__item"
                 key={video.id}
                 onClick={() => {
                     setSelected(video);
                 }}
                 >
                   <img src={video.image} alt={video.title} className="thumbnails__img" />
+                  <div className="thumbnails__details">
+                    <h2 className="thumbnails__title">
+                      {video.title}
+                    </h2>
+                    <p className="thumbnails__channel">
+                      {video.channel}
+                    </p>
+
+                  </div>
                 </li>
             ))}
         </ul>

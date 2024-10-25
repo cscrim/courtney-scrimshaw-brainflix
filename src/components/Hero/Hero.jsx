@@ -36,7 +36,7 @@ function Hero({ selected }) {
             </div>
         </div>
         <div className="hero__description-container">
-            <p>
+            <p className="hero__text">
                 {selected.description}
             </p>
         </div>
