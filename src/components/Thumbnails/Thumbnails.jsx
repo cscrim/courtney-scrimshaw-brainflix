@@ -6,7 +6,7 @@ function Thumbnails({ videos, setSelected }) {
     <div className="thumbnails">
       <div className="thumbnails__heading">
       <h2>
-        Next Videos
+        NEXT VIDEOS
       </h2>
       </div>
         <ul className="thumbnails__list">
