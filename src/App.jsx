@@ -24,7 +24,7 @@ function App() {
     <>
       <Header myHandlerFunction={handleOnClick}/>
       <Hero selected={selected}/>
-      <Comments />
+      <Comments selected={selected} />
       <Thumbnails videos={videos} setSelected={setSelected} />
       
     </>
