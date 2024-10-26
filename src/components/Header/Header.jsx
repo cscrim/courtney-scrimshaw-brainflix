@@ -32,7 +32,7 @@ function Header({ myHandlerFunction }) {
         <div className="header__button">
       <button onClick={myHandlerFunction}>
         <img src={uploadIcon} alt="upload icon" className="upload-icon" />
-        UPLOAD</button>
+        <span>UPLOAD</span></button>
       </div>
     </header>
   )
