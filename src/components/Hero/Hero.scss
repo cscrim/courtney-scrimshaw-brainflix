@@ -45,6 +45,15 @@
             font-size: 1.125rem;
             color: #AFAFAF;
             padding-top: 1.5rem;
+            display: flex;
+            align-items: center;
+
+            img {
+                margin-right: 1rem;
+                height: 30px;
+                width: 30px;
+                align-items: center;
+            }
         }
 
         span {
@@ -62,5 +71,6 @@
     &__text {
         padding-bottom: 1rem;
         padding-top: 0.5rem;
+        font-size: 1.25rem;
     }
 }

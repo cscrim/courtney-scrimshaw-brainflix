@@ -1,3 +1,5 @@
+import viewsIcon from '../../assets/images/views.svg';
+import likesIcon from '../../assets/images/likes.svg';
 import "./Hero.scss";
 
 function Hero({ selected }) {
@@ -39,9 +41,11 @@ function Hero({ selected }) {
             </div>
             <div className="hero__details-views">
                 <p>
+                  <img src={viewsIcon} alt="views icon" className="hero__icon" />
                     {selected.views}
                 </p>
                 <p>
+                  <img src={likesIcon} alt="likes icon" className="hero__icon" />
                     {selected.likes}
                 </p>
             </div>
