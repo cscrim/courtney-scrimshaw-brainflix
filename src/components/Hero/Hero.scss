@@ -1,3 +1,5 @@
+@import '../../styles/partials/variables';
+
 .hero {
 
     display: flex;
@@ -21,7 +23,7 @@
         width: 90%;
         padding-top: 2rem;
         padding-bottom: 1.5rem;
-        border-bottom: 2px solid #E1E1E1;
+        border-bottom: 2px solid $secondary-grey;
 
         h1 {
             font-weight: 700;
@@ -34,7 +36,7 @@
         justify-content: space-around;
         padding-bottom: 1rem;
         width: 90%;
-        border-bottom: 2px solid #E1E1E1;
+        border-bottom: 2px solid $secondary-grey;
 
         & > div {
             text-align: left;
@@ -43,7 +45,7 @@
 
         p {
             font-size: 1.125rem;
-            color: #AFAFAF;
+            color: $primary-grey;
             padding-top: 1.5rem;
             display: flex;
             align-items: center;
@@ -58,7 +60,7 @@
 
         span {
             font-weight: 600;
-            color: black;
+            color: $secondary-black;
         }
     }
 
