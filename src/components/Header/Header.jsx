@@ -17,10 +17,12 @@ function Header({ myHandlerFunction }) {
         <div className="header__search-container">
         <div className="header__search-bar">
             <form>
+              <div className="header__search-wrapper">
                 <div className="header__search-icon">
                     <img src={searchIcon} alt="search icon" />
                 </div>
                 <input type="text" placeholder="Search" />
+                </div>
             </form>
         </div>
         <div className="header__avatar">
@@ -47,17 +49,3 @@ export default Header;
 
 
 
-
-
-// type rfce and hit enter to import this default template
-// import React from 'react'
-
-// function componentName() {
-//   return (
-//     <div>
-
-//     </div>
-//   )
-// }
-
-// export default componentName
