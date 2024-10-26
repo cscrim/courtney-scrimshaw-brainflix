@@ -3,6 +3,7 @@ import Header from './components/Header/Header';
 import Hero from './components/Hero/Hero';
 import Comments from './components/Comments/Comments';
 import Thumbnails from './components/Thumbnails/Thumbnails';
+import HeroVideo from './components/HeroVideo/HeroVideo';
 import videoData from './data/video-details.json';
 import './App.scss'
 
@@ -23,10 +24,17 @@ function App() {
   return (
     <>
       <Header myHandlerFunction={handleOnClick}/>
+      <HeroVideo selected={selected} />
+
+      <div className="desktop-wrapper">
+      <div className="left-wrapper">
       <Hero selected={selected}/>
-      <Comments selected={selected} />
-      <Thumbnails videos={videos} setSelected={setSelected} />
       
+      <Comments selected={selected} />
+      </div>
+
+      <Thumbnails videos={videos} setSelected={setSelected} />
+      </div>
     </>
   );
 }

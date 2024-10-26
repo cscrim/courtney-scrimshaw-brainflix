@@ -1,4 +1,5 @@
 import userAvatar from "../../assets/images/Mohan-muruge.jpg";
+import commentIcon from '../../assets/images/add_comment.svg';
 import "./Comments.scss";
 
 function Comments({ selected }) {
@@ -28,7 +29,9 @@ function Comments({ selected }) {
           <p>JOIN THE CONVERSATION</p>
           <form className="comments__form">
             <input type="text" placeholder="Add a new comment" />
-            <button type="submit">COMMENT</button>
+            <button type="submit">
+              <img src={commentIcon} alt="comment icon" className="comment-icon" />
+              <span>COMMENT</span></button>
           </form>
         </div>
       </div>

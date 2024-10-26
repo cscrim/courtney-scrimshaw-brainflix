@@ -18,7 +18,7 @@ function Hero({ selected }) {
     
   return (
     <div className="hero">
-      <div className="hero__video-container">
+      {/* <div className="hero__video-container">
         <video
           className="hero__video"
           src={selected.video}
@@ -26,7 +26,7 @@ function Hero({ selected }) {
           poster={selected.image}
           controls
         ></video>
-      </div>
+      </div> */}
       <div className="hero__title-container">
         <h1>{selected.title}</h1>
         </div>
