@@ -2,9 +2,24 @@ import userAvatar from "../../assets/images/Mohan-muruge.jpg";
 import "./Comments.scss";
 
 function Comments({ selected }) {
+
+  const formatTime = (timestamp) => {
+    const date = new Date(timestamp);
+
+    const month = date.getMonth() + 1;
+    const day = date.getDate();
+    const year = date.getFullYear();
+
+    return `${month}/${day}/${year}`;
+
+  }
+
+
   return (
     <div className="comments">
-      <div className="comments__count">3 comments (update to be dynamic)</div>
+      <div className="comments__count">
+        {selected.comments.length} Comment{selected.comments.length !== 1 ? 's' : ''}
+      </div>
       <div className="comments__input-container">
         <div className="comments__avatar">
           <img src={userAvatar} alt="user avatar" />
@@ -17,11 +32,7 @@ function Comments({ selected }) {
           </form>
         </div>
       </div>
-      {/* <div className="comments__border">
-          
-        </div> */}
-
-
+ 
 
       <div className="comments__rendered-container">
         {selected.comments.map(comment => (
@@ -31,8 +42,13 @@ function Comments({ selected }) {
         </div>
 
         <div className="comments__comment">
+          <div className="comments__name-date-wrapper">
           <div className="comments__name">
             {comment.name}
+          </div>
+          <div className="comments__date">
+            {formatTime(comment.timestamp)}
+            </div>
           </div>
           <div className="comments__text">
           {comment.comment}

@@ -4,6 +4,8 @@
         display: flex;
         padding-left: 1.5rem;
         padding-bottom: 2rem;
+        font-weight: 600;
+        font-size: 1.125rem;
         
     }
     &__input-container {
@@ -97,10 +99,30 @@
         padding-left: 2rem;
     }
 
-    &__name {
+    &__name-date-wrapper {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
         padding-bottom: 0.5rem;
     }
 
+    &__name {
+        padding-bottom: 0.5rem;
+        font-weight: 600;
+        font-size: 1.125rem;
+    }
+
+    &__date {
+        color: #AFAFAF;
+        font-size: 1.125rem;
+        
+    }
+
+    &__text {
+        font-size: 1.125rem;
+    }
+
+   
 }
 
 
