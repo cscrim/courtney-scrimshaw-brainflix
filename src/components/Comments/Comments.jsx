@@ -25,9 +25,9 @@ function Comments({ selected }) {
 
       <div className="comments__rendered-container">
         {selected.comments.map(comment => (
-          <div key={comment.id}>
+          <div key={comment.id} className="comments__comment-container">
         <div className="comments__placeholder">
-          "Img"
+          
         </div>
 
         <div className="comments__comment">
