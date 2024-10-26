@@ -34,6 +34,9 @@ function Header({ myHandlerFunction }) {
         <img src={uploadIcon} alt="upload icon" className="upload-icon" />
         <span>UPLOAD</span></button>
       </div>
+      {/* <div className="header__avatar-tablet">
+        <img src={userAvatar} alt="user avatar tablet and desktop" />
+      </div> */}
     </header>
   )
 };

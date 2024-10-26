@@ -1,3 +1,4 @@
+
 $primary-black: #323232;
 $primary-blue: #0095FF;
 $primary-grey: #AFAFAF;
@@ -8,3 +9,18 @@ $secondary-blue: #0065AD;
 $secondary-grey: #E1E1E1;
 $secondary-white: #FAFAFA;
 
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1200px;
+
+
+@mixin tablet {
+    @media (min-width: $breakpoint-tablet) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: $breakpoint-desktop) {
+        @content;
+    }
+}

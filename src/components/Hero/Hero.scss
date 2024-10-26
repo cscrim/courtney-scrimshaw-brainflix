@@ -1,4 +1,4 @@
-@import '../../styles/partials/variables';
+@use '../../styles/partials/variables' as *;
 
 .hero {
 
@@ -9,6 +9,10 @@
     &__video-container {
         width: 100%;
         height: 30vh;
+
+        @include tablet {
+            height: 50vh;
+        }
 
         .hero__video {
             object-fit: cover;
@@ -25,9 +29,18 @@
         padding-bottom: 1.5rem;
         border-bottom: 2px solid $secondary-grey;
 
+        @include tablet {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
         h1 {
             font-weight: 700;
             font-size: 2.25rem;
+
+            @include tablet {
+                font-size: 3rem;
+            }
         }
     }
 
@@ -42,6 +55,7 @@
             text-align: left;
             flex: 1;
         }
+
 
         p {
             font-size: 1.125rem;
@@ -62,6 +76,7 @@
             font-weight: 600;
             color: $secondary-black;
         }
+
     }
 
     &__description-container {
@@ -74,5 +89,42 @@
         padding-bottom: 1rem;
         padding-top: 0.5rem;
         font-size: 1.25rem;
+    }
+
+    @include tablet {
+        &__details-container {
+            display: flex; 
+            justify-content: space-between; 
+            width: 90%; 
+    
+            & > div {
+                display: flex;
+                justify-content: space-between; 
+                align-items: center; 
+            }
+
+            gap: 10rem;
+
+    
+            p {
+                font-size: 1.125rem;
+                color: $primary-grey;
+                margin: 0; 
+                display: flex; 
+                align-items: center; 
+    
+                img {
+                    margin-right: 0.5rem; 
+                    height: 20px; 
+                    width: 20px;
+                }
+            }
+    
+            span {
+                font-weight: 600;
+                font-size: 1.5rem;
+                color: $secondary-black;
+            }
+        }
     }
 }
