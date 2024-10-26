@@ -20,18 +20,37 @@
         justify-content: center;
         width: 90%;
         padding-top: 2rem;
-        padding-bottom: 1rem;
+        padding-bottom: 1.5rem;
         border-bottom: 1px solid grey;
+
+        h1 {
+            font-weight: 700;
+            font-size: 2.25rem;
+        }
     }
 
     &__details-container {
         display: flex;
-
-        width: 100%;
         justify-content: space-around;
-        padding: 1rem 0;
+        padding-bottom: 1rem;
         width: 90%;
         border-bottom: 1px solid grey;
+
+        & > div {
+            text-align: left;
+            flex: 1;
+        }
+
+        p {
+            font-size: 1.125rem;
+            color: #AFAFAF;
+            padding-top: 1.5rem;
+        }
+
+        span {
+            font-weight: 600;
+            color: black;
+        }
     }
 
     &__description-container {
@@ -42,5 +61,6 @@
 
     &__text {
         padding-bottom: 1rem;
+        padding-top: 0.5rem;
     }
 }

@@ -2,7 +2,18 @@ import "./Hero.scss";
 
 function Hero({ selected }) {
 
-    console.log("video URL", selected.video);
+  const formatTime = (timestamp) => {
+    const date = new Date(timestamp);
+
+    const month = date.getMonth() + 1;
+    const day = date.getDate();
+    const year = date.getFullYear();
+
+    return `${month}/${day}/${year}`;
+
+  }
+
+    
   return (
     <div className="hero">
       <div className="hero__video-container">
@@ -20,10 +31,10 @@ function Hero({ selected }) {
         <div className="hero__details-container">
             <div className="hero__details-channel">
                 <p>
-                    {selected.channel}
+                    <span>By {selected.channel}</span>
                 </p>
                 <p>
-                    {selected.timestamp}
+                    {formatTime (selected.timestamp)}
                 </p>
             </div>
             <div className="hero__details-views">
