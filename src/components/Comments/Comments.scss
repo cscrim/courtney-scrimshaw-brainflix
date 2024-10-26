@@ -9,6 +9,11 @@
         padding-bottom: 2rem;
         font-weight: 600;
         font-size: 1.125rem; 
+
+        @include tablet {
+            margin-left: 1.5rem;
+            font-size: 1.4rem;
+        }
     }
 
     &__input-container {
@@ -16,6 +21,49 @@
         padding-left: 1rem;
         justify-content: center;
         width: 100%;
+
+        @include tablet {
+            padding-left: 0;
+            justify-content: center;
+            margin: 0 1.5rem;
+            width: 100%;
+            margin: 0 1.5rem;
+            margin-bottom: 1.5rem;
+            align-items: center;
+
+            & > .comments__avatar {
+                margin-right: 2rem;
+               
+            }
+
+            & > .comments__input {
+                display: flex; // Use flexbox to align header, input, and button
+                flex-direction: column; // Stack header above input/button
+                width: 75%; // Full width for the input container
+            
+
+                .comments__form {
+                    display: flex; // Flex layout for input and button
+                    align-items: center; // Center items vertically
+
+                    input {
+                        flex: 1; // Allow input to grow
+                        margin-right: 2rem;
+                        // margin-left: 2rem; // Space between input and button
+                     
+                    }
+
+                    button {
+                        height: 3rem; // Keep button height consistent
+                        padding: 0 1rem;
+                        max-width: 13rem;
+                        padding-top: 0.5rem; // Add padding for button
+                     
+                    }
+                }
+            }
+        
+        }
     }
 
     &__avatar {
@@ -55,6 +103,11 @@
             padding-left: 1rem;
             background-color: $secondary-white;
             font-size: 1.125rem;
+
+            @include tablet {
+                padding-bottom: 0;
+                height: 4rem;
+            }
         }
 
         button {

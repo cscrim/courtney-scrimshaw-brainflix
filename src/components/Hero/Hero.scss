@@ -32,6 +32,7 @@
         @include tablet {
             border-bottom: none;
             padding-bottom: 0;
+            justify-content: flex-start;
         }
 
         h1 {
@@ -50,6 +51,7 @@
         padding-bottom: 1rem;
         width: 90%;
         border-bottom: 2px solid $secondary-grey;
+        margin-bottom: 1.5rem;
 
         & > div {
             text-align: left;
