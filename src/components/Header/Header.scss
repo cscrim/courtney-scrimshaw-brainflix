@@ -23,6 +23,10 @@
             margin-right: 6rem;
         }
 
+        @include desktop {
+            margin-right: 30rem;
+        }
+
         img {
             height: 3rem;
             width: 11rem;
@@ -104,6 +108,10 @@
 
         @include tablet {
             width: 25%;
+        }
+
+        @include desktop {
+            width: 15%;
         }
 
         button {
