@@ -1,9 +1,8 @@
 import userAvatar from "../../assets/images/Mohan-muruge.jpg";
-import commentIcon from '../../assets/images/add_comment.svg';
+import commentIcon from "../../assets/images/add_comment.svg";
 import "./Comments.scss";
 
 function Comments({ selected }) {
-
   const formatTime = (timestamp) => {
     const date = new Date(timestamp);
 
@@ -12,14 +11,18 @@ function Comments({ selected }) {
     const year = date.getFullYear();
 
     return `${month}/${day}/${year}`;
+  };
 
+  const comments = selected?.comments || [];
+
+  if (!selected) {
+    return <div>Loading.. </div>;
   }
-
 
   return (
     <div className="comments">
       <div className="comments__count">
-        {selected.comments.length} Comment{selected.comments.length !== 1 ? 's' : ''}
+        {comments.length} Comment{comments.length !== 1 ? "s" : ""}
       </div>
       <div className="comments__input-container">
         <div className="comments__avatar">
@@ -30,34 +33,32 @@ function Comments({ selected }) {
           <form className="comments__form">
             <input type="text" placeholder="Add a new comment" />
             <button type="submit">
-              <img src={commentIcon} alt="comment icon" className="comment-icon" />
-              <span>COMMENT</span></button>
+              <img
+                src={commentIcon}
+                alt="comment icon"
+                className="comment-icon"
+              />
+              <span>COMMENT</span>
+            </button>
           </form>
         </div>
       </div>
- 
 
       <div className="comments__rendered-container">
-        {selected.comments.map(comment => (
+        {comments.map((comment) => (
           <div key={comment.id} className="comments__comment-container">
-        <div className="comments__placeholder">
-          
-        </div>
+            <div className="comments__placeholder"></div>
 
-        <div className="comments__comment">
-          <div className="comments__name-date-wrapper">
-          <div className="comments__name">
-            {comment.name}
-          </div>
-          <div className="comments__date">
-            {formatTime(comment.timestamp)}
+            <div className="comments__comment">
+              <div className="comments__name-date-wrapper">
+                <div className="comments__name">{comment.name}</div>
+                <div className="comments__date">
+                  {formatTime(comment.timestamp)}
+                </div>
+              </div>
+              <div className="comments__text">{comment.comment}</div>
             </div>
           </div>
-          <div className="comments__text">
-          {comment.comment}
-          </div>
-        </div>
-        </div>
         ))}
       </div>
     </div>
