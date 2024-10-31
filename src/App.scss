@@ -1,27 +1,27 @@
-@use './styles/partials/variables' as *;
-@import 'styles/partials/fonts';
+// @use './styles/partials/variables' as *;
+// @import 'styles/partials/fonts';
 
 
-* {
-  margin: 0;
-  box-sizing: border-box;
-  font-family: 'Avenir';
-  font-weight: 400;
+// * {
+//   margin: 0;
+//   box-sizing: border-box;
+//   font-family: 'Avenir';
+//   font-weight: 400;
   
-}
+// }
 
-@include desktop {
+// @include desktop {
 
-  .left-wrapper {
-    display: flex;
-    flex-direction: column;
-    border-right: 2px solid $secondary-grey;
-    width: 90%;
-  }
+//   .left-wrapper {
+//     display: flex;
+//     flex-direction: column;
+//     border-right: 2px solid $secondary-grey;
+//     width: 90%;
+//   }
 
-  .desktop-wrapper {
-    display: flex;
-    flex-direction: row;
-    margin-top: 2rem;
-  }
-}
+//   .desktop-wrapper {
+//     display: flex;
+//     flex-direction: row;
+//     margin-top: 2rem;
+//   }
+// }

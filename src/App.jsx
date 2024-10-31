@@ -1,42 +1,17 @@
-import { useState } from "react";
-import Header from './components/Header/Header';
-import Hero from './components/Hero/Hero';
-import Comments from './components/Comments/Comments';
-import Thumbnails from './components/Thumbnails/Thumbnails';
-import HeroVideo from './components/HeroVideo/HeroVideo';
-import videoData from './data/video-details.json';
-import './App.scss'
+import Home from './pages/Home/Home';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 
 function App() {
 
-  const handleOnClick = ()=> {
-    //event.preventDefault(); if we had event in the params () above
-    alert("This is where we will be able to upload videos");
-  };
-
-  const[selected, setSelected] = useState(videoData[0]);
-
-  const videos = videoData.filter((d) => d!== selected); 
-  // this makes sure that doesnt display the selected video in the thumbnail list
-
-
   return (
-    <>
-      <Header myHandlerFunction={handleOnClick}/>
-      <HeroVideo selected={selected} />
+    <BrowserRouter>
+    <Routes>
+      <Route path ="/" element = {<Home />} />
+    </Routes>
+    </BrowserRouter>
 
-      <div className="desktop-wrapper">
-      <div className="left-wrapper">
-      <Hero selected={selected}/>
-      
-      <Comments selected={selected} />
-      </div>
-
-      <Thumbnails videos={videos} setSelected={setSelected} />
-      </div>
-    </>
-  );
+  )
 }
 
 export default App;

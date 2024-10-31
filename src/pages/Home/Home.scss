@@ -1,0 +1,27 @@
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/fonts' as *;
+
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Avenir';
+  font-weight: 400;
+  
+}
+
+@include desktop {
+
+  .left-wrapper {
+    display: flex;
+    flex-direction: column;
+    border-right: 2px solid $secondary-grey;
+    width: 90%;
+  }
+
+  .desktop-wrapper {
+    display: flex;
+    flex-direction: row;
+    margin-top: 2rem;
+  }
+}
