@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Header from '../../components/Header/Header';
 import HeroVideo from '../../components/HeroVideo/HeroVideo';
 import Hero from '../../components/Hero/Hero';
