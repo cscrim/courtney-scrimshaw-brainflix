@@ -1,6 +1,6 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home/Home';
 import Uploads from './pages/Uploads/Uploads';
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 
 
 function App() {
@@ -13,7 +13,6 @@ function App() {
       <Route path="/videos/:videoId" element={<Home />} />
     </Routes>
     </BrowserRouter>
-
   )
 }
 

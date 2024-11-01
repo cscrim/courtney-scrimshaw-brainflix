@@ -1,7 +1,7 @@
 import "./Thumbnails.scss";
-import { useState } from "react";
 
-function Thumbnails({ videos, selected, setSelected }) {
+
+function Thumbnails({ videos, setSelected }) {
   return (
     <div className="thumbnails">
       <div className="thumbnails__heading">
