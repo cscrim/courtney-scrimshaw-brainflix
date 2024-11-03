@@ -2,6 +2,7 @@ import "./Thumbnails.scss";
 
 
 function Thumbnails({ videos, setSelected }) {
+  
   return (
     <div className="thumbnails">
       <div className="thumbnails__heading">

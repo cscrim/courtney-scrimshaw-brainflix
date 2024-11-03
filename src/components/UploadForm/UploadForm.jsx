@@ -27,8 +27,10 @@ function UploadForm() {
 
   return (
     <div className="upload-form__container">
+      <div className="desktop-wrapper">
       <div className="upload__title-image">
         <h2>Upload Video</h2>
+        <div className="upload__thumbnail-content">
         <div className="upload__img">
           <h3>VIDEO THUMBNAIL</h3>
           <img
@@ -36,11 +38,13 @@ function UploadForm() {
             alt="thumbnail-img"
             className="upload-thumbnail"
           />
+          </div>
         </div>
       </div>
 
       <div className="upload__form-container">
         <form className="form" onSubmit={handleSubmit}>
+          <div className="form__fields">
           <div className="form__title">
             <label htmlFor="videoTitle">TITLE YOUR VIDEO</label>
             <input
@@ -62,6 +66,8 @@ function UploadForm() {
               onChange={handleDescription}
             ></textarea>
           </div>
+          </div>
+          
           <div className="form__buttons">
             <button type="submit" className="publish-button">
               PUBLISH
@@ -71,6 +77,7 @@ function UploadForm() {
             </Link>
           </div>
         </form>
+        </div>
       </div>
     </div>
   );
