@@ -10,7 +10,9 @@ import "./Home.scss";
 
 // const baseURL = "https://unit-3-project-api-0a5620414506.herokuapp.com/";
 
-const baseURL = "http://localhost:8080/";
+// const baseURL = "http://localhost:8080/";
+
+const baseURL = import.meta.env.VITE_BASE_URL;
 
 // const apiKey = "688fc29d-14c4-434a-9e30-da14fc78d4be";
 

@@ -1,8 +1,8 @@
 import "./Thumbnails.scss";
 
+const baseURL = import.meta.env.VITE_BASE_URL
 
 function Thumbnails({ videos, setSelected }) {
-  
   return (
     <div className="thumbnails">
       <div className="thumbnails__heading">
@@ -18,7 +18,8 @@ function Thumbnails({ videos, setSelected }) {
             }}
           >
             <img
-              src={video.image}
+              // src={video.image}
+              src={`${baseURL}${video.image}`}
               alt={video.title}
               className="thumbnails__img"
             />
