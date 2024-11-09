@@ -1,67 +1,63 @@
-@use '../../styles/partials/variables' as *;
-
+@use "../../styles/partials/variables" as *;
 
 .thumbnails {
+  margin-bottom: 3rem;
 
-    margin-bottom: 3rem;
+  &__heading {
+    display: flex;
+    width: 100%;
+    padding-left: 1.5rem;
 
-    &__heading {
-        display: flex;
-        width: 100%;
-        padding-left: 1.5rem;
-        
-        h2 {
-            font-size: 1.125rem;
-            color: $primary-grey;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-        }
-
-        @include tablet {
-            margin-left: 1.5rem;
-        }
+    h2 {
+      font-size: 1.125rem;
+      color: $primary-grey;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
     }
 
+    @include tablet {
+      margin-left: 1.5rem;
+    }
+  }
 
-    &__list {
-        display: flex;
-        flex-direction: column;
-        list-style: none;
-        padding-left: 1.5rem;
+  &__list {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding-left: 1.5rem;
+  }
+
+  &__item {
+    display: flex;
+    cursor: pointer;
+    padding: 1rem 0;
+
+    @include tablet {
+      margin-left: 1.5rem;
+    }
+  }
+
+  &__img {
+    width: 11rem;
+    height: auto;
+    object-fit: cover;
+    border-radius: 0.3125rem;
+  }
+
+  &__details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-left: 1.2rem;
+    width: 100%;
+
+    h2 {
+      font-size: 1.125rem;
+      font-weight: 600;
     }
 
-    &__item {
-        display: flex;
-        cursor: pointer;
-        padding: 1rem 0;
-
-        @include tablet {
-            margin-left: 1.5rem;
-        }
-       
+    p {
+      font-size: 1.125rem;
     }
-
-    &__img {
-        width: 11rem;
-        height: auto;
-        object-fit: cover;
-        border-radius: .3125rem;
-    }
-
-    &__details {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        padding-left: 1.2rem;
-        width: 100%; 
-        
-        h2 {
-            font-size: 1.125rem;
-            font-weight: 600;
-        }
-
-        p {
-            font-size: 1.125rem;
-        }
-    }
+  }
 }

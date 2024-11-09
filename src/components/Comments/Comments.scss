@@ -1,211 +1,195 @@
-@use '../../styles/partials/variables' as *;
-
+@use "../../styles/partials/variables" as *;
 
 .comments {
+  &__count {
+    display: flex;
+    padding-left: 1.5rem;
+    padding-bottom: 2rem;
+    font-weight: 600;
+    font-size: 1.125rem;
 
-    &__count {
-        display: flex;
-        padding-left: 1.5rem;
-        padding-bottom: 2rem;
-        font-weight: 600;
-        font-size: 1.125rem; 
+    @include tablet {
+      margin-left: 1.5rem;
+      font-size: 1.4rem;
+    }
+  }
+
+  &__input-container {
+    display: flex;
+    padding-left: 1rem;
+    justify-content: center;
+    width: 100%;
+
+    @include tablet {
+      padding-left: 0;
+      justify-content: center;
+      margin: 0 1.5rem;
+      width: 100%;
+      margin: 0 1.5rem;
+      margin-bottom: 1.5rem;
+      align-items: center;
+
+      & > .comments__avatar {
+        margin-right: 2rem;
+      }
+
+      & > .comments__input {
+        display: flex; // Use flexbox to align header, input, and button
+        flex-direction: column; // Stack header above input/button
+        width: 75%; // Full width for the input container
+
+        .comments__form {
+          display: flex; // Flex layout for input and button
+          align-items: center; // Center items vertically
+
+          input {
+            flex: 1; // Allow input to grow
+            margin-right: 2rem;
+            // margin-left: 2rem; // Space between input and button
+          }
+
+          button {
+            height: 3rem; // Keep button height consistent
+            padding: 0 1rem;
+            max-width: 13rem;
+            padding-top: 0.5rem; // Add padding for button
+          }
+        }
+      }
+    }
+  }
+
+  &__avatar {
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    margin-right: 1rem;
+    margin-top: 1.5rem;
+
+    img {
+      height: 100%;
+      width: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: left;
+    }
+  }
+
+  &__input {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+
+    p {
+      margin-bottom: 0.5rem;
+      color: $primary-grey;
+      font-weight: 600;
+    }
+
+    input {
+      width: 100%;
+      height: 8rem;
+      border-radius: 0.3125rem;
+      border: 2px solid $secondary-grey;
+      margin-bottom: 1rem;
+      padding-bottom: 4.5rem;
+      padding-left: 1rem;
+      background-color: $secondary-white;
+      font-size: 1.125rem;
+
+      @include tablet {
+        padding-bottom: 0;
+        height: 4rem;
+      }
+    }
+
+    button {
+      background-color: $primary-blue;
+      color: $primary-white;
+      height: 3rem;
+      width: 100%;
+      border-radius: 0.3125rem;
+      margin-bottom: 2rem;
+      border: none;
+      font-size: 1.125rem;
+      align-items: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      img {
+        margin-left: 1rem;
+        height: 1.5rem;
+        width: auto;
 
         @include tablet {
-            margin-left: 1.5rem;
-            font-size: 1.4rem;
+          margin-left: 0.5rem;
         }
-    }
+      }
 
-    &__input-container {
-        display: flex;
-        padding-left: 1rem;
-        justify-content: center;
-        width: 100%;
+      span {
+        flex-grow: 1;
+        text-align: center;
+        padding-right: 2rem;
+        font-weight: 600;
 
         @include tablet {
-            padding-left: 0;
-            justify-content: center;
-            margin: 0 1.5rem;
-            width: 100%;
-            margin: 0 1.5rem;
-            margin-bottom: 1.5rem;
-            align-items: center;
-
-            & > .comments__avatar {
-                margin-right: 2rem;
-               
-            }
-
-            & > .comments__input {
-                display: flex; // Use flexbox to align header, input, and button
-                flex-direction: column; // Stack header above input/button
-                width: 75%; // Full width for the input container
-            
-
-                .comments__form {
-                    display: flex; // Flex layout for input and button
-                    align-items: center; // Center items vertically
-
-                    input {
-                        flex: 1; // Allow input to grow
-                        margin-right: 2rem;
-                        // margin-left: 2rem; // Space between input and button
-                     
-                    }
-
-                    button {
-                        height: 3rem; // Keep button height consistent
-                        padding: 0 1rem;
-                        max-width: 13rem;
-                        padding-top: 0.5rem; // Add padding for button
-                     
-                    }
-                }
-            }
-        
+          padding-right: 0;
         }
+      }
     }
+  }
 
-    &__avatar {
-        width: 3.5rem;
-        height: 3.5rem;
-        border-radius: 50%;
-        margin-right: 1rem;
-        margin-top: 1.5rem;
+  &__rendered-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1.5rem;
+  }
 
-        img {
-            height: 100%;
-            width: 100%;
-            border-radius: 50%;
-            object-fit: cover;
-            object-position: left;
-        }
+  &__comment-container {
+    display: flex;
+    justify-content: flex-start;
+    padding: 1.5rem 0 1.5rem 0;
+    width: 90%;
+    border-bottom: 2px solid $secondary-grey;
+
+    &:first-child {
+      border-top: 2px solid $secondary-grey;
     }
+  }
 
-    &__input {
-        display: flex;
-        flex-direction: column;
-        width: 80%;
+  &__placeholder {
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    background-color: $secondary-grey;
+  }
 
-        p {
-            margin-bottom: 0.5rem;
-            color: $primary-grey;
-            font-weight: 600;
-        }
+  &__comment {
+    width: 80%;
+    padding-left: 2rem;
+  }
 
-        input {
-            width: 100%;
-            height: 8rem;
-            border-radius: .3125rem;
-            border: 2px solid $secondary-grey;
-            margin-bottom: 1rem;
-            padding-bottom: 4.5rem;
-            padding-left: 1rem;
-            background-color: $secondary-white;
-            font-size: 1.125rem;
+  &__name-date-wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding-bottom: 0.5rem;
+  }
 
-            @include tablet {
-                padding-bottom: 0;
-                height: 4rem;
-            }
-        }
+  &__name {
+    padding-bottom: 0.5rem;
+    font-weight: 600;
+    font-size: 1.125rem;
+  }
 
-        button {
-            background-color: $primary-blue;
-            color: $primary-white;
-            height: 3rem;
-            width: 100%;
-            border-radius: .3125rem;
-            margin-bottom: 2rem;
-            border: none;
-            font-size: 1.125rem;
-            align-items: center;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+  &__date {
+    color: $primary-grey;
+    font-size: 1.125rem;
+  }
 
-            img {
-                margin-left: 1rem;
-                height: 1.5rem;
-                width: auto;
-
-                @include tablet {
-                    margin-left: 0.5rem;
-                }
-            }
-
-            span {
-                flex-grow: 1;
-                text-align: center;
-                padding-right: 2rem;
-                font-weight: 600;
-
-                @include tablet {
-                    padding-right: 0;
-                }
-                
-            }
-
-            
-        }
-    }
-
-    &__rendered-container {
-        display: flex; 
-        flex-direction: column;
-        align-items: center;
-        margin-bottom: 1.5rem;
-    }
-
-    &__comment-container {
-        display: flex;
-        justify-content: flex-start;
-        padding: 1.5rem 0 1.5rem 0;
-        width: 90%;
-        border-bottom: 2px solid $secondary-grey;
-
-        &:first-child {
-            border-top: 2px solid $secondary-grey;
-        }
-    }
-
-    &__placeholder {
-        width: 3.5rem;
-        height:3.5rem;
-        border-radius: 50%;
-        background-color: $secondary-grey;
-    }
-
-    &__comment {
-        width: 80%;
-        padding-left: 2rem;
-    }
-
-    &__name-date-wrapper {
-        display: flex;
-        justify-content: space-between;
-        width: 100%;
-        padding-bottom: 0.5rem;
-    }
-
-    &__name {
-        padding-bottom: 0.5rem;
-        font-weight: 600;
-        font-size: 1.125rem;
-    }
-
-    &__date {
-        color: $primary-grey;
-        font-size: 1.125rem;
-        
-    }
-
-    &__text {
-        font-size: 1.125rem;
-    }
-
-   
+  &__text {
+    font-size: 1.125rem;
+  }
 }
-
-
-

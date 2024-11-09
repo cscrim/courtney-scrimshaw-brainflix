@@ -8,26 +8,16 @@ import Comments from "../../components/Comments/Comments";
 import Thumbnails from "../../components/Thumbnails/Thumbnails";
 import "./Home.scss";
 
-// const baseURL = "https://unit-3-project-api-0a5620414506.herokuapp.com/";
-
-// const baseURL = "http://localhost:8080/";
-
 const baseURL = import.meta.env.VITE_BASE_URL;
 
-// const apiKey = "688fc29d-14c4-434a-9e30-da14fc78d4be";
-
 function Home() {
-
   const { videoId } = useParams();
   const navigate = useNavigate();
   const [videos, setVideos] = useState([]);
   const [selectedVideo, setSelectedVideo] = useState(null);
 
-
   const getVideos = async () => {
     try {
-      // const response = await axios.get(`${baseURL}videos?api_key=${apiKey}`);
-
       const response = await axios.get(`${baseURL}videos`);
 
       setVideos(response.data);
@@ -41,13 +31,8 @@ function Home() {
     }
   };
 
-
   const getDetails = async (id) => {
     try {
-      // const response = await axios.get(
-      //   `${baseURL}videos/${id}?api_key=${apiKey}`
-      // );
-
       const response = await axios.get(`${baseURL}videos/${id}`);
 
       setSelectedVideo(response.data);
@@ -56,11 +41,9 @@ function Home() {
     }
   };
 
-
   useEffect(() => {
     getVideos();
   }, []);
-
 
   useEffect(() => {
     if (videoId) {
@@ -73,12 +56,10 @@ function Home() {
     }
   }, [videoId, videos]);
 
-
   const handleClick = (id) => {
     navigate(`/videos/${id}`);
     getDetails(id);
   };
-
 
   let filteredVideos = [];
 
@@ -88,7 +69,6 @@ function Home() {
     filteredVideos = videos;
   }
 
-
   let heroVideoDisplay;
 
   if (selectedVideo) {
@@ -96,7 +76,6 @@ function Home() {
   } else {
     heroVideoDisplay = <div>Loading...</div>;
   }
-
 
   return (
     <>
