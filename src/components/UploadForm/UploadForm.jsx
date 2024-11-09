@@ -3,19 +3,50 @@ import { Link, useNavigate } from "react-router-dom";
 import uploadImg from "../../assets/images/Upload-video-preview.jpg";
 import "./UploadForm.scss";
 
+
+
 function UploadForm() {
   const navigate = useNavigate();
+
+  const baseURL = import.meta.env.VITE_BASE_URL;
 
   // I set this up to have useState capture the data, but I realize right now it's not going anywhere! 
 
   const [videoTitle, setVideoTitle] = useState("");
   const [videoDescription, setVideoDescription] = useState("");
 
-  const handleSubmit = (event) => {
+  
+
+  // const handleSubmit = (event) => {
+  //   event.preventDefault();
+  //   alert("Your video was submitted successfully!");
+  //   navigate("/");
+  // };
+
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    alert("Your video was submitted successfully!");
-    navigate("/");
-  };
+
+    const thumbnailPath = `${baseURL}images/image0.jpg`;
+
+    const videoPost = {
+      title: videoTitle,
+      description: videoDescription,
+      image: thumbnailPath
+    };
+
+    try {
+      // Send POST request with the video data
+      await fetch(`${baseURL}/videos`, {
+        method: "POST",
+        body: JSON.stringify(videoData),
+      });
+
+      alert("Your video was submitted successfully!");
+      navigate("/");
+  } catch (error) {
+    alert("There was an error submitting your video");
+  }
+};
 
   const handleTitle = (event) => {
     setVideoTitle(event.target.value);
